@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion Menu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="accordion">
+      <div class="accordion-header">
+        <h2>UI / UX Design</h2>
+        <span class="icon">&#8964;</span>
+      </div>
+      <div class="panel">
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis
+            odio ab laboriosam placeat nisi provident similique adipisci libero
+            sequi iure.
+          </p>
+        </div>
+        <div class="panel-footer">
+          <div class="btn btn-primary">Learn More</div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-header">
+        <h2>Frontend Developement</h2>
+        <span class="icon">&#8964;</span>
+      </div>
+      <div class="panel">
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis
+            odio ab laboriosam placeat nisi provident similique adipisci libero
+            sequi iure.
+          </p>
+        </div>
+        <div class="panel-footer">
+          <div class="btn btn-primary">Learn More</div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-header">
+        <h2>Backend Developement</h2>
+        <span class="icon">&#8964;</span>
+      </div>
+      <div class="panel">
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est magnam
+            tenetur accusamus unde porro! Non ratione minima dicta quae
+            voluptatem, sit laboriosam magnam corporis repellat voluptates
+            facilis repellendus nobis, deleniti, asperiores hic ex provident
+            aspernatur assumenda excepturi nihil! Commodi, dolore!
+          </p>
+        </div>
+        <div class="panel-footer">
+          <div class="btn btn-primary">Learn More</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const accordions = document.querySelectorAll(".accordion");
+      accordions.forEach((accordion) => {
+        console.log(accordion.firstElementChild);
+        accordion.firstElementChild.addEventListener("click", function () {
+          accordion.classList.toggle("active");
+          accordion.firstElementChild.classList.toggle("active");
+          let panel = accordion.lastElementChild;
+          if (panel.style.height) {
+            panel.style.height = null;
+          } else {
+            panel.style.height = panel.scrollHeight + "px";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
